@@ -112,6 +112,26 @@ if (isset($update->edited_message)){
       ]
     ])
   ]);
+}elseif(preg_match('/^\/([Aa]nother)/',$text1)){
+  $text = "welcome to the new wolrd i called it no one knows ok now the question is this what language do yo speak select the answer";
+  bot('sendmessage',[
+    'chat_id'=>$chat_id,
+    'text'=>$text,
+    'parse_mode'=>'html',
+    'reply_markup'=>json_encode([
+      'inline_keyboard'=>[
+        [
+          ['text'=>'persian','url'=>'ok now if you want to help me in translate call me @nrsbott thnks press /worldthree to play more games']
+        ],
+        [
+          ['text'=>'french','url'=>'hi there if you can help me to improve my bot call me @nrsbott help me with translating press /worldthree to play more games']
+        ],
+        [
+          ['text'=>'every thinf else','url'=>'just help me with the translating call me @nrsbott thnks select /worldthree to play more games']
+        ]
+      ]
+    ])
+  ]);
 }elseif( $fadmin == $admin |  $fadmin == $admin2 and $update->message->text == '/stats'){
     $txtt = file_get_contents('member.txt');
     $member_id = explode("\n",$txtt);
