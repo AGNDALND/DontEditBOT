@@ -45,7 +45,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "hi this is dont edite bot but you can play with me too press /play to play with me";
+  $text = "hi this is dont edit bot but you can play with me too press /play to play with me";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
@@ -67,13 +67,13 @@ if (isset($update->edited_message)){
     $mmemcount = count($member_id) -1;
   bot('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"کاربران : $mmemcount 👤 "
+      'text'=>"members : $mmemcount 👤 "
     ]);
 
 }elseif(isset($update->message-> new_chat_member )){
 bot('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"به این گروه خوش اومدی قوانین رو رعایت کن که ریمو نشی"
+      'text'=>"welcome,follow the rules so you dont get kicked"
     ]);
 }
   
