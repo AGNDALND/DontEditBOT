@@ -30,8 +30,8 @@ if (isset($update->edited_message)){
   $eid = $editm->message_id;
   $edname = $editm->from->first_name;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = "<b>".$edname."</b>\nهههه پیامتو ادیت نکن
-  گفتی:
+  $text = "<b>".$edname."</b>\ndont edit your message
+  You say:
 ".$jsu;
   $id = $update->edited_message->chat->id;
   bot('sendmessage',[
@@ -45,7 +45,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "سلام به ربات بنده خوش امدید برای اطلاعات بیشتر بر روی /info کلیک کنید یا با مدیران در تماس باشید";
+  $text = "hi this is dont edite bot but you can play with me too press /play to play with me";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
@@ -53,10 +53,10 @@ if (isset($update->edited_message)){
     'reply_markup'=>json_encode([
       'inline_keyboard'=>[
         [
-          ['text'=>'ادمین','url'=>'https://telegram.me/UPDATE100']
+          ['text'=>'admin','url'=>'https://telegram.me/nrsbott']
         ],
         [
-          ['text'=>'ادمین','url'=>'https://telegram.me/mmiiilllaaddd']
+          ['text'=>'admin','url'=>'https://telegram.me/nrsbott']
         ]
       ]
     ])
