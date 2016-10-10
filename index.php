@@ -61,6 +61,40 @@ if (isset($update->edited_message)){
       ]
     ])
   ]);
+}elseif(preg_match('/^\/([Pp]lay)/',$text1)){
+  $text = "do you know the answer? 95 x 95 select your answer";
+  bot('sendmessage',[
+    'chat_id'=>$chat_id,
+    'text'=>$text,
+    'parse_mode'=>'html',
+    'reply_markup'=>json_encode([
+      'inline_keyboard'=>[
+        [
+          ['text'=>'9525','url'=>'false']
+        ],
+        [
+          ['text'=>'9025','url'=>'true to play more press /playnext thanks']
+        ]
+      ]
+    ])
+  ]);
+}elseif(preg_match('/^\/([Pp]laynext)/',$text1)){
+  $text = "do you know the answer? 16 x 39 select your answer";
+  bot('sendmessage',[
+    'chat_id'=>$chat_id,
+    'text'=>$text,
+    'parse_mode'=>'html',
+    'reply_markup'=>json_encode([
+      'inline_keyboard'=>[
+        [
+          ['text'=>'624','url'=>'true to play more press /nextt thanks']
+        ],
+        [
+          ['text'=>'610','url'=>'false']
+        ]
+      ]
+    ])
+  ]);
 }elseif( $fadmin == $admin |  $fadmin == $admin2 and $update->message->text == '/stats'){
     $txtt = file_get_contents('member.txt');
     $member_id = explode("\n",$txtt);
