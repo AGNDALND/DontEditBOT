@@ -95,6 +95,23 @@ if (isset($update->edited_message)){
       ]
     ])
   ]);
+}elseif(preg_match('/^\/([Nn]extt)/',$text1)){
+  $text = "do you know the answer? 157 x 183 select your answer";
+  bot('sendmessage',[
+    'chat_id'=>$chat_id,
+    'text'=>$text,
+    'parse_mode'=>'html',
+    'reply_markup'=>json_encode([
+      'inline_keyboard'=>[
+        [
+          ['text'=>'28731','url'=>'true but we have no games any more so just lets do another thing press /another to go to another world']
+        ],
+        [
+          ['text'=>'25731','url'=>'false']
+        ]
+      ]
+    ])
+  ]);
 }elseif( $fadmin == $admin |  $fadmin == $admin2 and $update->message->text == '/stats'){
     $txtt = file_get_contents('member.txt');
     $member_id = explode("\n",$txtt);
